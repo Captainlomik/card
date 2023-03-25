@@ -18,23 +18,39 @@
     flex-direction: column;
     align-items: center;
     height: 50vh;
+    padding-top: 20px;
 
     &-wrapp {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       width: fit-content
     }
 
     h1 {
       text-align: center;
       font-weight: bold;
-      font-size: 80px;
+      font-size: 90px;
     }
 
     button {
-      align-self: center;
-      padding: 10px 50px;
+      margin-top:50px;
+      padding: 20px 100px;
       border-radius: 10px;
-      border: none;
+      border: 1px solid $button-border;
       cursor: pointer;
+      background: $button;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+
+    button:hover{
+      background: $button-border;
+      border: 1px solid $button;
+      color: white;
+
     }
   }
 }
