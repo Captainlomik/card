@@ -22,20 +22,30 @@ document.onmousemove = function (event) {
   }
 };
 
-
 // Хвост
 cat.onmousemove = function (event) {
-   let mouseX = (event.clientX / cat.offsetWidth) * 2
+  let mouseX = (event.clientX / cat.offsetWidth) * 2;
   gsap.to(tail, 1, {
-      x: mouseX * 4,
-      rotation: mouseX * 4,
-
+    x: mouseX * 4,
+    rotation: mouseX * 4,
   });
-    console.log( mouseX -2  )
+  console.log(mouseX - 2);
 };
 cat.addEventListener("mouseout", (event) => {
   gsap.to(tail, 1, {
     x: 0,
-      rotation: 0,
+    rotation: 0,
   });
 });
+
+//Текст
+let txt = gsap.from("h1",
+  {
+    rotationY: 36,
+    opacity: 0,
+    duration: 3,
+    yPercent: -100,
+    stagger: 0.1,
+    ease: "elastic.out(1, 0.3)"
+  })
+
