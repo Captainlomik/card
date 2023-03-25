@@ -16,30 +16,41 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 22;
 
     &s {
         height: 100%;
     }
 
     &1 {
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 283px;
         position: relative;
+        left: 150px;
+        bottom:0;
+        z-index: 1;
+        
+        &__tail{
+            width: 200px;
+            position: absolute;
+            bottom: 0px;
+            left:-105px;
+            z-index: -1;
+        }
     }
 }
 
 .eye {
 
-
     &__l {
         @include eye;
-        top:95px;
-        left:99px;
+        top:77px;
+        left:58px;
     }
 
     &__r {
         @include eye;
-        top: 87px;
+        top: 66px;
         right: 63px;
     }
 
