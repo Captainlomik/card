@@ -6,7 +6,9 @@
   padding: 0;
   text-decoration: none;
 }
-
+body {
+  overflow: hidden;
+}
 .card {
   background-color: bisque;
   height: 100vh;
@@ -17,15 +19,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
-    padding-top: 20px;
+    height: 80vh;
 
     &-wrapp {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      width: fit-content
+      width: fit-content;
     }
 
     h1 {
@@ -35,7 +36,7 @@
     }
 
     button {
-      margin-top:50px;
+      margin-top: 50px;
       padding: 20px 100px;
       border-radius: 10px;
       border: 1px solid $button-border;
@@ -46,17 +47,16 @@
       letter-spacing: 2px;
     }
 
-    button:hover{
+    button:hover {
       background: $button-border;
       border: 1px solid $button;
       color: white;
-
     }
   }
 }
 
 .cat {
-  height: 50vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -114,4 +114,13 @@
     top: 5px;
     left: 10px;
   }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #00ff00;
+  border-radius: 20px;
+  z-index: 2;
 }
