@@ -1,68 +1,101 @@
-@import './vars.scss';
+@import "./vars.scss";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 .card {
-    background-color: bisque;
-    height: 100vh;
+  background-color: bisque;
+  height: 100vh;
+  overflow: hidden;
+
+  &__txt {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+
+    &-wrapp {
+      width: fit-content
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 80px;
+    }
+
+    button {
+      align-self: center;
+      padding: 10px 50px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }
 
 .cat {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 22;
+
+  &s {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    z-index: 22;
+  }
 
-    &s {
-        height: 100%;
-    }
+  &1 {
+    width: 260px;
+    height: 283px;
+    position: relative;
+    left: 150px;
+    bottom: 0;
+    z-index: 1;
 
-    &1 {
-        width: 260px;
-        height: 283px;
-        position: relative;
-        left: 150px;
-        bottom:0;
-        z-index: 1;
-        
-        &__tail{
-            width: 200px;
-            position: absolute;
-            bottom: 0px;
-            left:-105px;
-            z-index: -1;
-        }
+    &__tail {
+      width: 200px;
+      position: absolute;
+      bottom: 3px;
+      left: -90px;
+      z-index: -1;
     }
+    &__hat {
+      width: 110px;
+      position: absolute;
+      top: -30px;
+      left: 0px;
+    }
+  }
 }
 
 .eye {
+  &__l {
+    @include eye;
+    top: 77px;
+    left: 58px;
+  }
 
-    &__l {
-        @include eye;
-        top:77px;
-        left:58px;
-    }
+  &__r {
+    @include eye;
+    top: 66px;
+    right: 63px;
+  }
 
-    &__r {
-        @include eye;
-        top: 66px;
-        right: 63px;
-    }
+  &__r-sm {
+    @include eye-small;
+    top: 5px;
+    left: 10px;
+  }
 
-    &__r-sm {
-        @include eye-small;
-        top: 5px;
-        left: 10px;
-    }
-
-    &__l-sm {
-        @include eye-small;
-        top: 5px;
-        left: 10px;
-    }
+  &__l-sm {
+    @include eye-small;
+    top: 5px;
+    left: 10px;
+  }
 }
