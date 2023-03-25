@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-      "start": "webpack --watch"
+    "start": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +17,8 @@
     "sass-loader": "^13.2.1",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "gsap": "^3.11.5"
   }
 }
