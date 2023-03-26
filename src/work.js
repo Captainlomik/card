@@ -5,8 +5,8 @@ import {
 } from "./updateCustomProperty";
 
 const SPEED = 0.05;
-const work_INTERVAL_MIN = 700;
-const work_INTERVAL_MAX = 3000;
+const work_INTERVAL_MIN = 500;
+const work_INTERVAL_MAX = 2000;
 const worldElem = document.querySelector("[data-world]");
 
 let nextworkTime;
@@ -43,7 +43,7 @@ export function getworkRects() {
 function creatework() {
   const work = document.createElement("img");
   work.dataset.work = true;
-  work.src = "./assets/laptop.png";
+  work.src = "./assets/book.png";
   work.classList.add("work");
   setCustomProperty(work, "--left", 100);
   worldElem.append(work);
