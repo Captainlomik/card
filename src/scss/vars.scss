@@ -1,6 +1,9 @@
 $button: #f5ded5;
 $button-border: #e7995b;
 
+$leftV: 0;
+$bottomV: 0;
+
 @mixin eye-small{
     width: 40px;
     height: 40px;

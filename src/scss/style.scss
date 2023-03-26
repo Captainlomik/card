@@ -1,13 +1,19 @@
 @import "./vars.scss";
 
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-decoration: none;
+  user-select: none;
+
 }
 body {
-  overflow: hidden;
+  overflow: hidden; 
+   font-family: 'Comic Sans MS';
 }
 .card {
   background-color: bisque;
@@ -19,7 +25,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: 70vh;
 
     &-wrapp {
       display: flex;
@@ -33,6 +39,7 @@ body {
       text-align: center;
       font-weight: bold;
       font-size: 90px;
+      font-family: 'Comic Sans MS';
     }
 
     button {
@@ -45,6 +52,7 @@ body {
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 2px;
+      font-family: 'Comic Sans MS';
     }
 
     button:hover {
@@ -56,7 +64,7 @@ body {
 }
 
 .cat {
-  height: 20vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -125,12 +133,59 @@ body {
   z-index: 2;
 }
 
-
-.game{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 80vh;
+.game {
   display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.score {
+  position: absolute;
+  font-size: 30px;
+  right: 1vmin;
+  top: 1vmin;
+}
+
+.start-screen {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+.ground {
+  --left: 0;
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  left: calc(var(--left) * 1%);
+}
+
+.cat {
+  --bottom: 0;
+  position: absolute;
+  left: 1%;
+  height: 30%;
+  bottom: calc(var(--bottom) * 1%);
+}
+
+.work {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 30%;
+  bottom: 0;
 }
