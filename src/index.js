@@ -1,6 +1,5 @@
 import "./scss/style.scss";
 import gsap from "gsap";
-import { TweenMax } from "gsap/gsap-core";
 
 let cat = document.querySelector(".cat1");
 let tail = document.querySelector(".cat1__tail");
@@ -54,20 +53,13 @@ let total = 50;
 let container = document.querySelector(".card");
 let btn = document.querySelector("button");
 
-btn.addEventListener("mouseover", confetti);
-btn.addEventListener("click", deleteConf);
-
-function deleteConf() {
-  let conf = document.querySelectorAll('.dot')
-  for (let i in conf) {
-    conf[i].parentNode.removeChild(conf[i])
-  }
-}
+btn.addEventListener("click", confetti);
 
 function confetti() {
-
   let w = container.offsetWidth;
   let h = container.offsetHeight;
+
+  let flag = false;
 
   for (var i = 0, div; i < total; i++) {
     div = document.createElement("div");
@@ -81,13 +73,15 @@ function confetti() {
       scale: R(0, 0.5) + 0.5,
       backgroundColor: "hsl(" + R(170, 360) + ",50%,50%)",
     });
+
     animm(div);
+
+    if (flag) setTimeout(del, 50000); //Если включено конфети, то удалить
   }
 
   function animm(elm) {
     gsap.to(elm, R(0, 5) + 3, {
       y: h,
-      // ease: Linear.easeNone,
       repeat: -1,
       delay: -5,
     });
@@ -95,17 +89,22 @@ function confetti() {
       x: "+=70",
       repeat: -1,
       yoyo: true,
-      // ease: Sine.easeInOut,
     });
     gsap.to(elm, R(0, 1) + 0.5, {
       opacity: 0,
       repeat: -1,
       yoyo: true,
-      // ease: Sine.easeInOut,
     });
+    return (flag = true);
   }
 
   function R(min, max) {
     return min + Math.random() * (max - min);
   }
 }
+
+//Удаление конфети
+function del() {
+  document.querySelector(".dot").remove();
+}
+
