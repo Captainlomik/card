@@ -59,6 +59,14 @@ gsap.from("h1", {
   ease: "elastic.out(1, 0.3)",
 });
 
+
+let hat1 = document.querySelector('.cat1__hat')
+let hat2 = document.querySelector('.cat2__hat')
+
+hat1.addEventListener('click', confetti)
+hat2.addEventListener('click', confetti)
+
+
 //Конфети
 let total = 50;
 let container = document.querySelector(".card");
