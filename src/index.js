@@ -11,13 +11,20 @@ let txt = document.querySelector(".card__txt");
 
 //Глаза
 document.onmousemove = function (event) {
-  let x = event.x - 208;
-  let y = event.y - 368;
+  let x1 = event.x - 232;
+  let y1 = event.y - 670;
+  let x2 = event.x - 1230;
+  let y2 = event.y - 670;
 
   document.querySelector(".eye__l").style.transform =
-    "rotate(" + 57.2958 * argctg(x, y) + "deg)";
+    "rotate(" + 57.2958 * argctg(x1, y1) + "deg)";
   document.querySelector(".eye__r").style.transform =
-    "rotate(" + 57.2958 * argctg(x - 100, y) + "deg)";
+    "rotate(" + 57.2958 * argctg(x1 - 100, y1) + "deg)";
+
+  document.querySelector(".eye2__l").style.transform =
+    "rotate(" + 57.2958 * argctg(x2, y2) + "deg)";
+  document.querySelector(".eye2__r").style.transform =
+    "rotate(" + 60 * argctg(-x2 + 100, -y2) + "deg)";
 
   function argctg(x, y) {
     if (x > 0 && y > 0) return Math.PI / 2 - Math.atan(x / y);
@@ -180,7 +187,7 @@ function update(time) {
   window.requestAnimationFrame(update);
 }
 
-  //Проигрыш
+//Проигрыш
 function checkLose() {
   const catRect = getcatRect();
   return getworkRects().some((rect) => isCollision(rect, catRect));
@@ -195,9 +202,8 @@ function isCollision(rect1, rect2) {
   );
 }
 
- //увеличение скорости
+//увеличение скорости
 function updateSpeedScale(delta) {
- 
   speedScale += delta * SPEED_SCALE_INCREASE;
 }
 
@@ -206,9 +212,8 @@ function updateScore(delta) {
   scoreElem.textContent = Math.floor(score);
 }
 
- //стартовая позиция
+//стартовая позиция
 function handleStart() {
- 
   lastTime = null;
   speedScale = 1;
   score = 0;
@@ -219,9 +224,8 @@ function handleStart() {
   window.requestAnimationFrame(update);
 }
 
-  //проигрыш
+//проигрыш
 function handleLose() {
-
   catLose();
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true });
@@ -231,7 +235,6 @@ function handleLose() {
 
 //для разных расширений
 function setPixelToWorldScale() {
-  
   let worldToPixelScale;
   if (window.innerWidth / window.innerHeight < WORLD_WIDTH / WORLD_HEIGHT) {
     worldToPixelScale = window.innerWidth / WORLD_WIDTH;

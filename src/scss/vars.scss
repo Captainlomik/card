@@ -1,23 +1,25 @@
 $button: #f5ded5;
 $button-border: #e7995b;
+$eyeColor: lightblue;
+$eyeColor2: #f5ded5;
 
 $leftV: 0;
 $bottomV: 0;
 
-@mixin eye-small{
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
+@mixin eye-small {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
 }
 
-@mixin eye{
-    width: 53px;
-    height: 53px;
-    background-color: lightblue;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
+@mixin eye($color: $lightblue) {
+  width: 53px;
+  height: 53px;
+  background-color: $color;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
 }
