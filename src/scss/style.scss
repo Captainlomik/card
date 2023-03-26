@@ -124,3 +124,13 @@ body {
   border-radius: 20px;
   z-index: 2;
 }
+
+
+.game{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  display: none;
+}

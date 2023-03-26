@@ -76,7 +76,7 @@ function confetti() {
 
     animm(div);
 
-    if (flag) setTimeout(del, 50000); //Если включено конфети, то удалить
+    if (flag) setTimeout(del, 1000); //Если включено конфети, то удалить
   }
 
   function animm(elm) {
@@ -108,3 +108,40 @@ function del() {
   document.querySelector(".dot").remove();
 }
 
+//Удаление блока с текстом
+btn.addEventListener("click", deleteTxt);
+
+function deleteTxt() {
+  gsap.fromTo(
+    ".game",
+    1,
+    {
+      display: "none",
+      opacity: 0,
+    },
+    {
+      display: "block",
+      opacity: 1,
+      duration: 2.5,
+      ease: "slow(0.7, 0.7, false)",
+    }
+  );
+
+  gsap.to(txt, 1, {
+    opacity: 0,
+    display: "none",
+  });
+
+  gsap.fromTo(
+    cat,
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    {
+      opacity: 1,
+      duration: 2.5,
+      ease: "slow(0.7, 0.7, false)",
+    }
+  );
+}
